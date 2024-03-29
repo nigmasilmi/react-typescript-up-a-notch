@@ -1,6 +1,6 @@
 // special decorator to indicate to the compiler indicating that it's safe be removed
 // from the build
-import { PropsWithChildren, type ReactNode } from "react";
+import { type PropsWithChildren } from "react";
 
 // interface CourseGoalProps {
 //   title: string;
