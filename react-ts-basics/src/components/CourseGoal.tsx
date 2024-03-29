@@ -1,6 +1,6 @@
 // special decorator to indicate to the compiler indicating that it's safe be removed
 // from the build
-import { FC, type PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 
 // interface CourseGoalProps {
 //   title: string;
@@ -8,19 +8,7 @@ import { FC, type PropsWithChildren } from "react";
 // }
 type CourseGoalProps = PropsWithChildren<{ title: string }>;
 
-// export default function CourseGoal({ title, children }: CourseGoalProps) {
-//   return (
-//     <article>
-//       <div>
-//         <h2>{title}</h2>
-//         {children}
-//       </div>
-//       <button>delete</button>
-//     </article>
-//   );
-// }
-
-const CourseGoal: FC<CourseGoalProps> = ({ title, children }) => {
+export default function CourseGoal({ title, children }: CourseGoalProps) {
   return (
     <article>
       <div>
@@ -30,6 +18,18 @@ const CourseGoal: FC<CourseGoalProps> = ({ title, children }) => {
       <button>delete</button>
     </article>
   );
-};
+}
 
-export default CourseGoal;
+// const CourseGoal: FC<CourseGoalProps> = ({ title, children }) => {
+//   return (
+//     <article>
+//       <div>
+//         <h2>{title}</h2>
+//         {children}
+//       </div>
+//       <button>delete</button>
+//     </article>
+//   );
+// };
+
+// export default CourseGoal;
