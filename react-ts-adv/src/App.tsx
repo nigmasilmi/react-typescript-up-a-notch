@@ -1,5 +1,7 @@
 import Input from "./components/Input";
-import Button from "./Button";
+import Button from "./components/Button";
+import Container from "./components/Container";
+
 function App() {
   return (
     <main>
@@ -9,6 +11,9 @@ function App() {
         <Button>Click Me</Button>
         <Button href="http://google.com">Navigate from here</Button>
       </div>
+      {/* polymorphic component */}
+      <Container as={Button} />
+      <Container as="article" />
     </main>
   );
 }
