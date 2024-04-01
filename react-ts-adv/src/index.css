@@ -131,3 +131,22 @@ input {
   gap: 10px;
   padding: 10px;
 }
+
+.parent-with-label {
+  position: relative;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 30px;
+}
+
+.parent-with-label::before {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  content: "I am his parent";
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 5px;
+  background-color: #294a52;
+}
