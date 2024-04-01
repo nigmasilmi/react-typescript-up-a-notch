@@ -24,7 +24,9 @@ export default function CourseGoalList({
   let warningBox: ReactNode;
   if (goals.length >= 4) {
     warningBox = (
-      <InfoBox mode="warning">There is some goals to complete first</InfoBox>
+      <InfoBox mode="warning" severity="high">
+        There is some goals to complete first
+      </InfoBox>
     );
   }
 
