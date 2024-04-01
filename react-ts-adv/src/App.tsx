@@ -6,10 +6,10 @@ function App() {
       <Input label="name" id="input-name" type="text" />
       <Input label="age" id="input-age" type="number" />
       <div className="button-group">
-        <Button el="button">Click Me</Button>
-        <Button el="anchor" href="http://google.com">
-          Navigate from here
-        </Button>
+        // what about not needing to add that el property each time // the next
+        solution focuses on that
+        <Button>Click Me</Button>
+        <Button href="http://google.com">Navigate from here</Button>
       </div>
     </main>
   );
