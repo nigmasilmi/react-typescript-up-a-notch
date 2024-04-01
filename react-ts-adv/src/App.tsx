@@ -12,8 +12,10 @@ function App() {
         <Button href="http://google.com">Navigate from here</Button>
       </div>
       {/* polymorphic component */}
-      <Container as={Button} />
-      <Container as="article" />
+      <Container as={Button}>click me again</Container>
+      <Container as="article">
+        <div>I am his child</div>
+      </Container>
     </main>
   );
 }
