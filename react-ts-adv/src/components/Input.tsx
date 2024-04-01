@@ -4,11 +4,14 @@ type InputProps = {
   //   type: "text" | "email";
 };
 
-export default function Input({ label, id }: InputProps) {
+// even though this could collect all properties for input,
+// if it not in InputProps, they won't be valid ones on TypeScript side
+// in the next commit the solution
+export default function Input({ label, id, ...props }: InputProps) {
   return (
     <p>
       <label htmlFor={id}>{label}</label>
-      <input id={id} />
+      <input id={id} {...props} />
     </p>
   );
 }
