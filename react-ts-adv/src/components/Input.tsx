@@ -1,12 +1,10 @@
+import { type ComponentPropsWithoutRef } from "react";
+
 type InputProps = {
   label: string;
   id: string;
-  //   type: "text" | "email";
-};
+} & ComponentPropsWithoutRef<"input">;
 
-// even though this could collect all properties for input,
-// if it not in InputProps, they won't be valid ones on TypeScript side
-// in the next commit the solution
 export default function Input({ label, id, ...props }: InputProps) {
   return (
     <p>
