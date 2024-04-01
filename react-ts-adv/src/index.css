@@ -150,3 +150,18 @@ input {
   border-radius: 5px;
   background-color: #294a52;
 }
+
+.dressed-button {
+  padding: 10px 15px;
+  width: 100%;
+  font: inherit;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  transition: background-color 700 ease;
+}
+
+.dressed-button:hover {
+  background-color: #9ae1d7;
+}
