@@ -7,6 +7,11 @@ import Form from "./components/Form";
 
 function App() {
   const inputRef = useRef<HTMLInputElement>(null);
+
+  function handleSave(data: unknown) {
+    const extractedData = data as { color: string; qty: string };
+    console.log("extData", extractedData);
+  }
   return (
     <main>
       <article>
@@ -28,11 +33,21 @@ function App() {
         <InputWitFwRef label="input with fwd" id="input-fwd" ref={inputRef} />
       </article>
       <article>
-        <Form>
+        <Form onSave={handleSave}>
           <fieldset>
             <legend>Do your thing</legend>
-            <Input type="text" label="color" id="color-id" />
-            <Input type="number" label="quantity" id="quantity-id" />
+            <InputWitFwRef
+              type="text"
+              label="color"
+              id="color-id"
+              name="color"
+            />
+            <InputWitFwRef
+              type="number"
+              label="quantity"
+              id="quantity-id"
+              name="qty"
+            />
             <Button className="dressed-button">Send</Button>
           </fieldset>
         </Form>
