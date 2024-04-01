@@ -6,8 +6,8 @@ function App() {
       <Input label="name" id="input-name" type="text" />
       <Input label="age" id="input-age" type="number" />
       <div className="button-group">
-        // what about not needing to add that el property each time // the next
-        solution focuses on that
+        {/* implementing the type predicate also
+leaves the issue that an anchor could receive a btn property and viceversa */}
         <Button>Click Me</Button>
         <Button href="http://google.com">Navigate from here</Button>
       </div>
