@@ -6,6 +6,8 @@ type AnchorTypeProps = ComponentPropsWithoutRef<"a"> & { href?: string };
 
 type ButtonProps = AnchorTypeProps | ButtonTypeProps;
 
+// see notes.md on type predicates
+
 export default function Button(props: ButtonProps) {
   function isAnchor(props: ButtonProps): props is AnchorTypeProps {
     return "href" in props;

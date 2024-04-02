@@ -3,14 +3,18 @@ import Button from "./components/Button";
 import Container from "./components/Container";
 import InputWitFwRef from "./components/InputWithFwdRef";
 import { useRef } from "react";
-import Form from "./components/Form";
+import Form, { FormHandle } from "./components/Form";
 
 function App() {
   const inputRef = useRef<HTMLInputElement>(null);
+  const customForm = useRef<FormHandle>(null);
 
   function handleSave(data: unknown) {
     const extractedData = data as { color: string; qty: string };
     console.log("extData", extractedData);
+    // here I want to clear the form, but not having access to its
+    // built-in clear, I need to use useImperativeHandle
+    customForm.current?.clear();
   }
   return (
     <main>
@@ -33,7 +37,7 @@ function App() {
         <InputWitFwRef label="input with fwd" id="input-fwd" ref={inputRef} />
       </article>
       <article>
-        <Form onSave={handleSave}>
+        <Form onSave={handleSave} ref={customForm}>
           <fieldset>
             <legend>Do your thing</legend>
             <InputWitFwRef
