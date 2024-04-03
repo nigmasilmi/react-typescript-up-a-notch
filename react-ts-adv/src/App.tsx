@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { get } from "./utils/http";
 import BlogPosts, { BlogPost } from "./components/BlogPosts";
 import postHeaderImg from "./assets/data-fetching.png";
+import ErrorMessage from "./components/ErrorMessage";
 
 // GET	/posts
 // GET	/posts/1
@@ -24,7 +25,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const dummyUrl = "https://jsonplaceholder.typicode.com/posts/5";
+  const dummyUrl = "https://jsonplaceholder.typicode.com/posts";
   useEffect(() => {
     async function fetchNow() {
       setLoading(true);
@@ -44,17 +45,25 @@ function App() {
     fetchNow();
   }, []);
 
+  let content: ReactNode;
+  if (error) {
+    content = <ErrorMessage text={error} />;
+  }
+  if (loading) {
+    content = <p>Loading...</p>;
+  }
+  if (data.length !== 0) {
+    content = (
+      <article>
+        <BlogPosts posts={data} />
+      </article>
+    );
+  }
+
   return (
     <main>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <article>
-          <img src={postHeaderImg} alt="illustration of a thing" />
-          {error && <p>{`Sorry, there was an error. Please try again`}</p>}
-          <BlogPosts posts={data} />
-        </article>
-      )}
+      <img src={postHeaderImg} alt="illustration of a computer" />
+      {content}
     </main>
   );
 }

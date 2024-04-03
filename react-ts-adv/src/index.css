@@ -20,7 +20,7 @@ main article {
   margin: 3rem auto;
 }
 
-main > article > img {
+main > img {
   display: block;
   width: 8rem;
   height: 8rem;
