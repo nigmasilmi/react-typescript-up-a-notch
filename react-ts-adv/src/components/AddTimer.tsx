@@ -11,7 +11,6 @@ export default function AddTimer() {
 
   function handleSaveTimer(data: unknown) {
     const extractedData = data as { name: string; duration: string };
-
     addTimer({ name: extractedData.name, duration: +extractedData.duration });
     console.log(extractedData);
     form.current?.clear();
