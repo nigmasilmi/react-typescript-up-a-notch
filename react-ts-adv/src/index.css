@@ -14,13 +14,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
-main {
+main article {
   width: 90%;
   max-width: 50rem;
   margin: 3rem auto;
 }
 
-main > img {
+main > article > img {
   display: block;
   width: 8rem;
   height: 8rem;
