@@ -50,7 +50,7 @@ function App() {
     content = <ErrorMessage text={error} />;
   }
   if (loading) {
-    content = <p>Loading...</p>;
+    content = <p id="loading-fallback">Loading...</p>;
   }
   if (data.length !== 0) {
     content = (
