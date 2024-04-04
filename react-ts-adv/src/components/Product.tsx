@@ -12,7 +12,9 @@ export default function Product({
   price,
   description,
 }: ProductProps) {
-  function handleAddToCart() {}
+  function handleAddToCart() {
+    // dispatch an action to add the item of interest
+  }
 
   return (
     <article className="product">
