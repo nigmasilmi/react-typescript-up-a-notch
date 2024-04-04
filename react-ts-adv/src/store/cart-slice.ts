@@ -43,3 +43,8 @@ export const cartSlice = createSlice({
     },
   },
 });
+
+// exporting action functions
+// invoked, they create action objects which can be sent to Redux
+// and Redux invokes the reducers
+export const { addToCart, removeFromCart } = cartSlice.actions;
