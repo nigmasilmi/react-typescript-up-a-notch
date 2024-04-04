@@ -15,3 +15,7 @@ Type predicates in TypeScript are used to narrow down the type of a variable wit
 ## useImperativeHandle hook
 
 The useImperativeHandle hook in React is primarily used to expose imperative functionality from a child component to its parent or other components using a ref. This means that it allows a child component to customize the value or methods that it exposes to its parent or other components, typically through a ref object.
+
+## State management with redux-toolkt vs React Context
+
+In Redux Toolkit, mutating the state directly is possible because Redux Toolkit uses Immer under the hood, which provides a mechanism for writing immutable updates to the state in a more intuitive way. This is in contrast to using React Context, where directly mutating the context's state is discouraged due to potential issues with state management and re-renders.
